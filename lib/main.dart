@@ -1,5 +1,7 @@
-import 'package:a/home.dart';
+import 'package:a/controller/provider.dart';
+import 'package:a/view/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +13,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: MyHome());
+    return ChangeNotifierProvider(
+        create: (context) => AddProvider(),
+        child: MaterialApp(debugShowCheckedModeBanner: false, home: MyHome()));
   }
 }
